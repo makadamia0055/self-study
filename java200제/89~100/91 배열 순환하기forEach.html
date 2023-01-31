@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>forEach 예제</title>
+</head>
+<body>
+	<script>
+		/*
+		배열.forEach(callback)	
+		*/
+		const arr = [
+			{id : 0, name: '혜림', age: 6},
+			{id : 1, name : '현일', age: 3}, 
+			{id: 2, name : '현아', age: 5},
+			{id: 3, name : '우림', age: 2}
+		];
+
+		arr.forEach((el)=>{
+			console.log(el.name);
+		})
+	</script>
+</body>
+</html>

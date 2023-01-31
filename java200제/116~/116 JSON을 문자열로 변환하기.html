@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		JSON.stringify(값, 리플레이서, 공백 개수);
+		값: 변환할 값
+		리플레이서: 문자열로 변환하기 전에 값을 변경하는 인자. 콜백 함수 또는 특정 키를 담은 배열을 넣어 값을 변경
+		공백 개수: 가독성을 위해 추가할 들여쓰기 공백
+		*/
+
+		const testStringify = {
+			stringifiedNum : JSON.stringify(13.1),
+			stringifiedStr : JSON.stringify('kiss Carnival'),
+			stringifiedBln: JSON.stringify(false),
+			stringifiedArr : JSON.stringify([2003, 2017])
+
+		}
+
+		for (let key in testStringify){
+			console.log(`---------${key}----------`);
+			console.log(typeof testStringify[key]);
+			console.log(testStringify[key]);
+		}
+
+		console.log(`-------stringifyObj------------`);
+		const obj = {
+			drama: 'PET',
+			season: 2017,
+			casting: ['koyoki', 'matsumoto jun'],
+			character: ['sumire', 'momo']
+		};
+
+		console.log(typeof JSON.stringify(obj));
+		console.log(JSON.stringify(obj));
+		console.log(JSON.stringify(obj, ['drama', 'season']));
+		console.log(JSON.stringify(obj, null, 4));
+		console.log(JSON.stringify(obj, (key, val) => {
+			if (key ==='season') return 2003;
+			return val;
+
+		}, 4))
+	</script>
+</body>
+</html>

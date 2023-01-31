@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		filter와 마찬가지로 배열을 순회하며 콜백함수에 따라 찾는데 
+		해당하는 첫번째 요소만 리턴
+		*/
+		const arr = [
+			{name: '우림', age: 2},
+			{name: '현아', age: 8},
+			{name: '탄이', age: 6},
+			{name: '밀조', age: 5},
+			{name: '고소', age: 20},
+			{name: '상수', age: 4},
+
+		];
+
+		const myFriend = arr.find(el=> el.age==20);
+		console.log(myFriend);
+	</script>
+</body>
+</html>

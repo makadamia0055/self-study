@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>두개의 날짜 사이 경과 시간 계산하기</title>
+</head>
+<body>
+
+	<script>
+	Date.daysDiff = (date1, date2)=>{
+		if(!(date1 instanceof Date)|| !(date2 instanceof Date)) return '';
+		
+		const d1 = date1.getTime();
+		const d2 = date2.getTime();
+
+		let diff = d2 -d1;
+
+		const seconds = Math.floor((diff=diff/1000)%60);
+		const minutes = Math.floor((diff = diff /60) %60);
+		const hours = Math.floor((diff = diff/60) %24);
+		const days = Math.floor(diff/24);
+		return `${days} 일, ${hours} 시간, ${minutes} 분, ${seconds}초`;		
+	}
+
+	var from = new Date(2000, 0, 1);
+	var to = new Date(from.getFullYear() +1, from.getMonth() +3, from.getDate() +5, 
+	from.getHours()+4, from.getMinutes() + 30, from.getSeconds() + 50);
+
+	console.log(`from > ${from}`);
+	console.log(`to > ${to}`);
+	console.log(Date.daysDiff(from, to));
+</script>
+</body>
+</html>

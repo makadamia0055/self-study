@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>10진수가 아닌 진법을 다른 진법으로 변환하기</title>
+</head>
+<body>
+	<script>
+		// parseInt(숫자형, 숫자형의 지수)
+		const bin = 1000010011;
+		const oct = 1023;
+		const hex = 213;
+
+		const dexByBin = parseInt(bin, 2);
+		const dexByOct = parseInt(oct, 8);
+		const dexByhex = parseInt(hex, 16);
+		const hexByOct = parseInt(oct, 8).toString(16);
+
+		console.log(dexByBin);
+		console.log(dexByOct);
+		console.log(dexByhex);
+		console.log(hexByOct);
+	</script>
+</body>
+</html>

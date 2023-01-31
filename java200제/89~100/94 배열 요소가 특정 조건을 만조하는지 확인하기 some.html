@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+const arr = [
+	{id: 0, name : '고길동', age: 7},
+	{id: 1, name: '삼봉', age: 3},
+	{id: 2, name: '춘배', age: 9},
+	{id: 3, name: '우림', age: 2}
+	];
+
+	const isSambongHere = arr.some(el=> el.name=='삼봉');
+	const olderThanSix = arr.some(el=>el.age>6);
+
+	console.log(isSambongHere);
+	console.log(olderThanSix);
+	</script>
+	
+</body>
+</html>

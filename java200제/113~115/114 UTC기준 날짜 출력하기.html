@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UTC 기준 날짜 출력하기</title>
+</head>
+<body>
+	<script>
+		const date = new Date();
+		const dateUTC = Date.UTC(
+			date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
+			date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds()
+		)
+		console.log(new Date(dateUTC));
+
+		/*
+		콘솔 출력단에서 Date.protoType.toString() 메소드가 실행되어 Date 객체 인스턴스 값이 자동 형변환 됨
+		한국은 UTC +8
+		
+		*/ 
+	</script>
+</body>
+</html>
