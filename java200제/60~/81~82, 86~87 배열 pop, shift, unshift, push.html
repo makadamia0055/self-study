@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		js의 Array는 linked list 자료구조 형태로 이루어져 있다. 배열의 앞 뒤에 요소를 추가하는 것이 가능
+		push 배열 뒤쪽에 요소를 추가
+		unshift 배열 앞쪽에 요소를 추가
+		pop 배열 마지막 요소 추출하기
+		shift 배열 앞쪽에 요소 추출하기
+		*/
+		const num = ['1'];
+		num.push('2');
+		num.unshift('3');
+		num.push('4');
+		num.push('5');
+		num.push('6');
+		console.log(num);
+		num.shift();
+		num.pop();
+		console.log(num);
+
+	</script>
+</body>
+</html>

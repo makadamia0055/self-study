@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// '문자열'.substr(시작 인덱스[, 길이]);
+		// 새문자열 반환, 기존 문자열에 영향 X
+		const sentence = 'Wakanda Forever!!!';
+		console.log(sentence.substr(8));
+		console.log(sentence.substr(8, 7));
+		console.log(sentence.substr(0));
+		console.log(sentence.substr(-10)); // 시작 인덱스는 음수 가능, 뒤에서부터
+		console.log(sentence.substr(0, -3)); // 길이는 음수 불가능
+		console.log(sentence.substr(30)); // 문자열보다 큰 시작 인덱스값 => 인덱스 찾지못해 빈값
+		console.log(sentence.substr(0, 30)); // 기존 문자열과 큰길이 = > 그냥 문자열 끝까지
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		Object : 다른 표준 내장 객체의 기본이 되는 일반 객체
+		Number: 숫자형을 감싼 래퍼객체.
+		String: 문자형을 감싼 객체, 문자형을 조작하거나 특정 문자열을 찾고 추출하는 등 메소드를 갖고 있음.
+		Array : 모든 배열은 Array.protype을 상속 받음. 
+		Math: 수학 관련 객체, new 를 통해 객체를 생성해서 사용하지 않고 static 메소드들을 클래스로 직접 호출해서 사용
+		Date: 시간 관련
+		JSON: JavaScript Object Notation(JSON)
+		RegExp: 정규 표현식을 통한 문자열 처리 객체
+		Map: Map
+		Set: Set
+		*/
+		const str = new String('자바 스크립트');
+		const num = new Number(2000);
+		const bool = new Boolean(true);
+		const date = new Date();
+		const map = new Map();
+		const set = new Set();
+		console.log(Math.PI);
+		console.log(Date.parse('2023-01-01'));
+		console.log(JSON.parse('{}'));
+
+		const str1 = '자바스크립트 200제';
+		const str2 = new String('자바스크립트 200제');
+		console.log(typeof str1);
+		console.log(typeof str2);
+
+		console.log(str1==='자바스크립트 200제');
+		console.log(str2===new String('자바스크립트 200제'));
+
+		console.log(str1.valueOf);
+		console.log(str2.valueOf);
+	</script>
+</body>
+</html>

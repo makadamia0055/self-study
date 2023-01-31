@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		console.log(Number.isNaN(NaN)); //true
+		console.log(Number.isNaN(undefined)); //false 
+		console.log(Number.isNaN('Is it Number?'))//false; 
+		console.log(Number.isNaN(0)); //false 
+		console.log(Number.isNaN(null)); //false 
+
+		console.log('=======');
+		console.log(Number.isNan(-1)); //false
+		console.log(Number.isNan(0/0)); //true
+		console.log(Number.isNaN(new Date())); //false (long으로 숫자값.)
+		console.log(Number.isNaN(new Date().toString)); // false String
+		console.log(Number.isNaN('Infinity')); //false 숫자형
+
+		function verifyNumber(n){
+			if(Number.isNaN(n)|| !n) return 0;
+			return n;
+		}
+		const num1 = verifyNumber(15); // 15;
+		const num2 = verifyNumber(undefined); // 0;
+		const num3 = verifyNumber(null); // 0
+		const num4 = verifyNumber(NaN); // 0
+		console.log(Num1 + num2 + num3 + num4); // 15
+	</script>
+</body>
+</html>

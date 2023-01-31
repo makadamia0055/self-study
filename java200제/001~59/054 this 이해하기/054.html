@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script> 
+		this.valueA = 'a';
+		console.log(valueA);
+		valueB = 'b';
+		console.log(this.valueB);
+
+		function checkThis(){
+			console.log(this); // 전역객체 Window가 반환
+		}
+		function checkThis2(){ //엄격모드
+			"use strict"; // 엄격모드 명령어
+			console.log(this); // 엄격모드에서는 정의된 적 없으므로 undefined를 가리킴
+		}
+		checkThis();
+		checkThis2();
+
+		function Product(name, price){ // 생성자 함수
+			this.name = name;
+			this.price = price;
+		}
+		const product1 = Product('가방', 2000); // new 없는 생성자 함수 => 전역객체 Window에 프로퍼티 할당
+		console.log(window.name);
+		console.log(window.price);
+
+		const product2 = {
+			name : '가방2',
+			price: 3000,
+			getVAT(){
+				return this.price/ 10; // 객체 내에서 this => 객체를 가리킴
+			}
+		}
+		const valueOfProduct2 = product2.getVAT(); // 객체 안의 메소드를 다른 변수에 저장
+		console.log(valueOfProduct2); // 그 변수로 호출 =>  여기서 메소드의 this는 전역 객체
+		/*
+		호출하는 시점에 .(점)연산자와 함께 객체가 주어져야 메소드 안의 this가 호출의 주체인 객체가 됨
+		*/
+
+		const calVAT = product2.getVAT;
+		const VAT2 = calVAT();
+		console.log(VAT2);
+		/*
+		this의 대상을 변경 가능한 메소드 
+		bind, call, apply
+		*/
+		const newCalVAT = calVAT.bind(product2); // 전달한 인자값으로 this 변경
+		const VAT3 = newCalVAT();
+		console.log(VAT3);
+
+		const counter1 ={
+			count : 0,
+			addAfter1Sec(){
+				setTimeout(function(){ // 메소드 안에서 중첩함수로 함수가 작성되었을 때 
+					this.count += 1; //내부함수 this는 전역객체를 가리킴. 여기서 this.count == Window.count
+					console.log(this.count);
+
+				}, 1000)
+			}
+		};
+		counter1.addAfter1Sec();
+
+		const counter2 ={
+			count : 0,
+			addAfter1Sec(){
+				setTimeout(()=>{ // 화살표 함수에서 this => 부모 환경의 this와 같다.
+					this.count +=1;
+					console.log(this.count);
+				}, 1000)
+			}
+		};
+		// 화살표 함수에서 this는 일반적인 this(호출 시점에 동적으로 결정)와 다르게 정적으로 결정됨
+		// 때문에 bind로 변경 불가
+		counter2.addAfter1Sec();
+
+		/*
+		node.js에서는 전역에서 this를 이용한 전역변수 할당이 불가능
+		*/
+
+	</script>
+</body>
+</html>

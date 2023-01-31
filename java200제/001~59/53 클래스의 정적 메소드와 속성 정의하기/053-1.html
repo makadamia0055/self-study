@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class ProductWithCode{
+			/*
+			정적 속성은 static get 으로 설정 가능(class밖에서 정의할 수 있으나 가독성을 높이기 위해
+			안에서 하는게 좋음.)
+			이와 별개로 정적 프로퍼티가 최근 추가됨. 그러나 크롬에서만 작동함. 사용법은 자바와 같음
+			static 키 = 값;
+
+			*/ 
+			static get CODE_PREFIX(){
+				return "PRODUCT-"
+			}
+			constructor(id){
+				this.id
+				this.code = ProductWithCode.CODE_PREFIX + id;
+
+			}
+		}
+
+		const product1 = new ProductWithCode('001');
+		console.log(ProductWithCode.CODE_PREFIX);
+		console.log(product1.code);
+	</script>
+</body>
+</html>

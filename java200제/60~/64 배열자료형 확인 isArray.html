@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		js는 변수의 자료형이 동적으로 바뀔 수 있기 때문에 의도한 자료형인지 확인해야 하는 경우가 있음
+		isArray 메소드는 배열인지 확인할때 사용.
+		*/
+		function callRoll(students){
+			if(!Array.isArray(students)) return;
+
+			students.forEach((student) => {
+				console.log(`Are you here, ${student}`);
+			});
+
+		}
+		const students = ['Jun', 'Ali', 'Murry', 'Toby'];
+		callRoll(students);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		프로토타입 기반의 객체지향 프로그래밍
+		__proto__ : 원형 객체
+		모든 객체는 다른 객체의 원형이 될 수 있다.
+		원형 객체를 할당하지 않으면 Object.prototype 객체가 연결된다.
+		*/
+		const studentProto = {
+			gainExp : function(){
+				this.exp++;
+			}
+		}
+		const harin = {
+			name: '하린',
+			age: 10,
+			exp: 0,
+			__proto__: studentProto
+		};
+		const bbo = {
+			name : "뽀", 
+			age: 20,
+			exp:10,
+			__proto__: studentProto
+		};
+		bbo.gainExp();
+		harin.gainExp();
+		harin.gainExp();
+		console.log(harin);
+		console.log(bbo);
+	</script>
+</body>
+</html>

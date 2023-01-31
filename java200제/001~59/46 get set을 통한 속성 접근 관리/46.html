@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	let user = {};
+	Object.defineProperty(user, "age", {
+		get : function() {
+			return this._age; // _ 언더바는 private속성에 대한 암묵적 표시. 
+			// js에는 접근 제한자가 없어서 명명법을 통해 비공개임을 나타냄.
+		} ,
+		set: function(age) {
+			if(age<0) {
+				console.error('0보다 작은 값은 올 수 없습니다.');
+			} else {
+				this._age = age;
+			}
+		},
+		enumerable: true
+	});
+	user.age = 10;
+	console.log(user.age);
+	user.age =-1;
+
+	let user2 = {
+		get name(){
+			return this._name;
+		},
+		set name(val){
+			if(val.length < 3) {
+				throw new Error('3자 이상이어야 합니다.');
+			}
+			this._name = val;
+		}
+	}
+	user2.name = 'harin';
+	console.log(user2.name);
+	user2.name = 'ha';
+
+</script>
+</body>
+</html>

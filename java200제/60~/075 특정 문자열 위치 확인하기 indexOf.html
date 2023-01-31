@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const str = 'Carpe diem, seize the day';
+		console.log(`e는 ${str.indexOf('e')}번째 인덱스에 있습니다.`);
+		console.log(`대문자 C는 ${str.indexOf('C')}번째 인덱스에 있습니다.`);
+		console.log(`소문자 c는 ${str.indexOf('c')}번째 인덱스에 있습니다.`);
+		console.log(`문자열 ', se'는 ${str.indexOf(', se')}번째 인덱스에 있습니다.`);
+
+		const arr = ['Carpe', 'diem', 'seize', 'the', 'day'];
+		const howManyHasE = (arr) => {
+			let count = 0;
+			arr.forEach((str)=> {
+				if (str.indexOf('e') > -1) count++;
+			});
+			return count;
+		}		
+		console.log(`${arr}에 "e"가 있는 요소는 모두 ${howManyHasE(arr)} 개 입니다`);
+	</script>
+</body>
+</html>

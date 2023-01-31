@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// Object의 내장 메소드 toString()
+		// 다른 모든 객체들은 prototype를 통해 Object의 내장 메소드 toString()에 접근하고 
+		// Override함(Object 객체의 toString()을 상속받은 것과는 다름);
+		const num = 5;
+		const bool = true;
+		const str = "문자열 값";
+		const arr = [1, 2, 3];
+		const obj = {a:15};
+
+		console.log(num.toString());
+		console.log(bool.toString());
+		console.log(str.toString());
+		console.log(arr.toString());
+		console.log(obj.toString());
+
+		num.__proto__.toString = () =>{
+			return 'toString 덮어쓰기';
+
+		};
+		console.log(num.toString());
+	</script>
+</body>
+</html>

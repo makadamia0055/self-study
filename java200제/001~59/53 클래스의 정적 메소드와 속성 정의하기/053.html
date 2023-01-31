@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		js에서도 정적static 메소드란 인스턴스 대신 클래스에서 직접 호출 가능한 메소드
+		생성자 함수의 prototype 기반 상속과는 다르게 클래스 상속은 정적 메소드도 상속 가능
+
+		메소드를 프로퍼티 형태로 직접 할당하는 것과 정적 메소드가 같다는 말이 있음
+		(즉 메소드를 직접 할당하는 것이 정적 메소드를 만든다는 것.)
+		class User { }
+
+		User.staticMethod = function() {
+ 		 alert(this === User);
+		};
+
+		User.staticMethod(); // true
+		
+		https://ko.javascript.info/static-properties-methods
+		*/
+	class Product{
+		static build(name, price){
+			const id = Math.floor(Math.random() * 1000);
+			return new Product(id, name, price);
+
+		}
+		static getTaxPrice(product){
+			return (product.price * 0.1) + product.price;
+		}
+
+		constructor(id, name, price){
+			this.id = id;
+			this.name = name;
+			this.price = price;
+		}
+	}
+	class DeposableProduct extends Product{
+		depose(){
+			this.deposed = true;
+		}
+	}
+	const gum = Product.build('껌', 1000);
+	console.log(gum);
+
+	const clothes = new DeposableProduct(1, '옷', 2000);
+	const taxPrice = DeposableProduct.getTaxPrice(clothes);
+	console.log(taxPrice);
+
+
+	</script>
+</body>
+</html>

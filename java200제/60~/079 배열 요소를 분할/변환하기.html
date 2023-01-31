@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		Array.from(배열로 변환될 값 [, 반환될 배열 내부 요소에 대한 callback 함수]);
+		구분자 없이 문자열값을 분할함. 분할된 문자열은 배열 요소에 각각 대입되어, 결과적으로 배열로 반환됨.
+		callback함수를 넣어주면 값을 변환하여 반환 가능
+		*/
+	const str = '123456789';
+	const distributeArr = Array.from(str);
+	console.log(distributeArr);
+	
+	const modifiedArr = Array.from(distributeArr, e1> e1 * 2);
+	console.log(modifiedArr);
+	</script>
+</body>
+</html>

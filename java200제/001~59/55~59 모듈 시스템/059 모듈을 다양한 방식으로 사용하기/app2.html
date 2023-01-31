@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script type="module">
+		import * as add from './add.js'; // 가져온 모듈 전체를 가리키는 이름 add를 as로 부여
+		import './sideeffect.js'; // from 키워드가 없으니 해당 스크립트를 실행해버림.
+
+		console.log(add.version);
+		const added = add.default(1, 2);
+		console.log(added);
+
+		hello('harin');
+
+
+	</script>
+</body>
+</html>

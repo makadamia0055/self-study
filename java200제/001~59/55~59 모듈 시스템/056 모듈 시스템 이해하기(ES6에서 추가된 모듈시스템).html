@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script type="module" src="./hello.js"> // script type 속성에 module를 입력해줘야함.
+		// import {hello} from './hello.js';
+		//모듈은 로컬 파일에서 동작하지 않고, HTTP 또는 HTTPS 프로토콜을 통해서만 동작합니다.
+		hello('es6 module');
+
+		/*
+		모듈의 특징
+		모듈은 항상 엄격모드로 실행됨.
+		모듈 레벨스코프 : 모듈은 자신만의 스코프를 가짐
+		모듈은 한번만 평가됨
+		- 한 모듈을 여러번 쓰더라도 한번만 평가됨 => 모듈의 결과가 모든 호출에 공유된다는거 같음
+		- 즉 사용하는 객체가 공유된다는 뜻
+
+		이 이외에는 https://ko.javascript.info/modules-intro 참조
+		
+		*/
+	</script>
+</body>
+</html>

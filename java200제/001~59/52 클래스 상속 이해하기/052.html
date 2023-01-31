@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class Chart{
+			constructor(width, height){
+				this.width = width;
+				this.height = height;
+			}
+
+			drawLine(){
+				console.log('draw line');
+			}
+		}
+		class BarChart extends Chart{
+			constructor(width, height){
+				super(width, height) // 부모 생성자 호출
+			}
+
+			draw(){
+				this.drawLine();
+				console.log(`draw ${this.width} X ${this.height} barchart`);
+			}
+		}
+
+		const barchart1 = new BarChart(100, 100);
+		barchart1.draw();
+	</script>
+</body>
+</html>

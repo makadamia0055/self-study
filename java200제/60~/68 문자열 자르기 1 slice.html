@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// '문자열'.slice(시작인덱스, [종료인덱스]);
+		// 지정된 문자열을 반환하되 기존 문자열에 영향을 미치지 않음.
+		const sentence = 'The sun will shine on us again';
+		console.log(sentence.slice(13));
+		console.log(sentence.slice(13, 24));
+		console.log(sentence.slice(0));
+		console.log(sentence.slice(0, -23));// 음수 인덱스 가능 뒤에서부터 23번째 문자
+		console.log(sentence.slice(50)); // 문자열보다 크면 빈값 반환
+		console.log(sentence.slice(7, 2)); // 첫번째 인자가 두번째 인자보다 크면 작동 X
+
+
+	</script>
+</body>
+</html>

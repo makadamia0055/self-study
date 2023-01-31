@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		if(true){
+			var functionScopeValue = 'global';
+			let blockScopeValue = 'local';
+
+		}
+		console.log(functionScopeValue); // global; // var=> 기본 설정. 함수 단위의 블록 설정
+		// if문 밖에서도 접근 가능(if문은 함수가 아니니까)
+		// console.log(blockScopeValue); // ReferenceError;
+		//let으로 설정된 변수는 블록 단위의 유효범위를 가짐. if문 밖에서 접근 불가;
+
+		let value = "바깥값";
+		if(true){
+			console.log(value);
+			let value = "안쪽값"; // let 의 호이스팅;
+			/*
+			let는 호이스팅이 일어나긴 하지만 let가 선언된 라인 이전까지 접근을 막음.
+			그리고 호이스팅은 블록 단위로 일어나기 때문에 if블록 안에 let value변수가 존재하여 
+			바깥 전역 let의 호출도 안됨.
+			*/ 
+		}
+		
+	</script>
+</body>
+</html>

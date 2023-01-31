@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		/*
+		 나머지 매개변수 ... restParameter
+		 arguments 객체와 유사하나 arguments 객체는 모든 인자를 포함하는 반면, 
+		 나머지 매개변수는 정해지지 않은 나머지를 의미
+		 매개변수를 작성하는 곳에서 작성하고, 다른 매개변수와 차이점을 두기 위해 ... 연산자와 함께 사용
+		 function(parameter, ...restParameter)
+		*/
+
+		function sum(...args){
+			var total = 0;
+			for(var i =0; i<args.length; i++){
+				total += args[i];
+
+			}
+			console.log(args.indexOf(1));
+			return total;
+		}
+		console.log(sum(1, 2, 3));
+
+		function sum2( a, b, ...others){
+			var total = a+b;
+			for(var i = 0; i< others.length; i++){
+				total += others[i];
+			}
+			return total;
+		}
+		console.log(sum2(1, 2));
+		console.log(sum2(1, 2, 3, 4));
+		
+
+	</script>
+</body>
+</html>

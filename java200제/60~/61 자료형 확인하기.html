@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const str = 'JavaScript';
+		const strObj = new String('JavaScript');
+		const num = 200;
+		const numObj = new Number(200);
+		const bool = true;
+		const boolObj = new Boolean(true);
+		const func = function(){};
+		const arr = [10, 200, 4000];
+		const obj = {a1: 'test'};
+		const empty = null;
+		const notCalled = undefined;
+
+		console.log(typeof str ==='string');
+		console.log(typeof strObj ==='object');
+		console.log(typeof num === 'number');
+		console.log(typeof numObj ==='object');
+		console.log(typeof bool ==='boolean');
+		console.log(typeof boolObj === 'object');
+		console.log(typeof func === 'function');
+		console.log(typeof arr === 'object');
+		console.log(typeof obj === 'object');
+		console.log(typeof empty === 'object');
+		// null은 typeof에서는 object를 반환함.
+		console.log(typeof notCalled === 'undefined');
+		
+		//typeof는 원시자료형이나 원시자료형과 객체를 구분하고 싶을 때 사용
+		// 객체의 유형을 확인하고 싶다면 instanceof 를 사용하는 것이 좋다.
+		console.log('==================')
+		console.log(str instanceof String);
+		console.log(strObj instanceof String);
+		console.log(num instanceof Number);
+		console.log(numObj instanceof Number);
+		console.log(bool instanceof Boolean);
+		console.log(boolObj instanceof Boolean);
+		console.log(arr instanceof Array);
+		console.log(obj instanceof Object);
+		console.log(func instanceof Function);
+		console.log(empty instanceof Object);
+		// 그러나 instanceof에서는 false를 반환함.
+		console.log(notCalled instanceof undefined);
+		//undefined는 객체가 아니기 때문에 에러를 발생시킴
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const teacherJay = {
+			name: '제이',
+			age : 30,
+			teachJavascript: function(student){
+				student.gainExp();
+
+			}
+		}
+		const studentBbo = {
+			name: '뽀',
+			age : 20,
+			exp: 0,
+			gainExp : function(){
+				this.exp++;
+			}
+		}
+		console.log(studentBbo.exp);
+		teacherJay.teachJavascript(studentBbo);
+		console.log(studentBbo.exp);
+	</script>
+
+	
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const URL = 'http://js.com';
+		// URL = 'http://js.com'; 
+		// 재할당 불가, 선언시 값을 할당해야함. 선언 후 별도 할당 불가
+
+		if(true) {
+			const URL2 = 'http"//js.com';
+
+		}// let와 마찬가지로 const는 블록 스코프 바깥에서 접근 불가능
+		// console.log(URL2);
+
+		// const로 정의된 상수에 객체를 할당해도 그 객체가 불변객체(immutable Object)가 되지는 않음.
+		const CONST_USER = {name: 'jay', age: 30};
+		console.log(CONST_USER.name, CONST_USER.age);
+		CONST_USER.name = 'jay2'; // 변경은 가능
+		CONST_USER.age = 31;
+		console.log(CONST_USER.name, CONST_USER.age);
+		CONST_USER={name:'bbo'} // 재할당은 안됨
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let user = {
+			name: "jeado"
+		};
+		/*
+		 js 의 모든 객체 속성은 자기 자신에 대한 정보를 담고 있는 속성 기술자(property descriptor)가 존재함. 
+		 이 속성 기술자는 객체로 표현됨. getOwnPropertyDescriptor로 호출 가능
+		*/
+		let descriptor = Object.getOwnPropertyDescriptor(user,'name');
+		console.log(descriptor);
+		
+		let user2 = {};
+		Object.defineProperty(user2, "name", {
+			value: "jeado", // 값
+			enumerable: true, // 나열 가능 여부
+			configurable: true, //속성 기술자 변경 여부
+			writable: false // 값을 변화시킬 수 있는지 여부 T변화가능 F불가
+		});
+		console.log(user2.name);
+		user2.name = "bbo";
+		console.log(user2.name);
+
+		let user3 = {
+			name : "jeado",
+			toString(){
+				return this.name;
+			}
+		};
+		Object.defineProperty(user3, "toString", {
+			enumerable:false
+		});
+		for( let key in user3) {
+			console.log(key);
+		}
+		let user4 = {};
+		Object.defineProperty(user4, "name", { 
+			value: "jeado",
+			configurable:false
+		});
+		delete user4.name;
+		console.log(user4);
+		Object.defineProperty(user5, "name", {
+			writable: true
+		});
+
+	</script>
+</body>
+</html>

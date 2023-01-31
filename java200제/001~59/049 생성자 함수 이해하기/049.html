@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		생성자 함수 : new 키워드와 함께 사용
+		return 문이 없어도 새로운 객체가 반환됨. this 키워드를 사용해 반환되는 객체의
+		초기 상태와 행위를 정의 가능
+		*/
+		function Teacher(name, age, subject){
+			this.name = name;
+			this.age = age;
+			this.subject = subject;
+			this.teach = function(student){
+				console.log(student +'에게 ' +this.subject+'를 가르칩니다.')
+			};
+		}
+		const jay = new Teacher('jay', 30, 'JavaScript');
+		console.log(jay);
+		jay.teach('bbo');
+
+		console.log(jay.constructor);
+		// 모든 객체는 constructor 속성을 가진다. 객체를 만든 생성자 함수를 가리킴;
+		console.log(jay instanceof Teacher);
+
+		const jay2 = Teacher('jay', 30, 'JavaScript');
+		// new 키워드가 없기 때문에 이때 호출되는 Teacher함수는 this 키워드를 전역객체로 받아들임. 그래서 
+		// 전역 객체에 name, age, subject에 전달받은 매개변수를 할당함. (teach도 할당)
+		console.log(jay2);
+		console.log(age); // 전역객체에 할당받은 age가 출력
+		console.log(teach);
+		/*
+		생성자 함수의 new 호출을 통한 객체 생성 과정은 다음과 같다.
+		1. 빈 객체를 만든다.
+		2. 만든 빈 객체를 this에 할당한다.
+		3. 생성자 함수 바디 코드를 실행한다. (this에 속성 및 메소드 추가);
+		4. 만든 빈 객체의 __proto__에 생성자 함수의 prototype속성을 대입한다.
+		5. this를 반환값으로 변환한다.
+		
+		*/
+	</script>
+</body>
+</html>

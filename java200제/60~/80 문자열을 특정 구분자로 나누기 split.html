@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		특정 구분자로 나누는 split
+		split는 배열로 리턴하기 때문에 문자열.split('.')[0] 등으로 활용 가능;
+		*/
+		const capitals = `Prague,Czech Republic 
+		Copenhagen,Denmark
+		Paris,France
+		Madrid,Spain
+		Rome,Italy`;
+
+		capitals.split('\n').forEach(s=>{
+			const capital = s.split(',')[0];
+			const country = s.split(',')[1];
+			console.log(`${capital} is in ${country}`);
+		})
+	</script>
+</body>
+</html>

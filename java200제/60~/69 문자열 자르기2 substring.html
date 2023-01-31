@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//'문자열'.substring(시작인덱스 [, 종료인덱스]);
+		//새로운 문자열 반환, 기존 문자열 변경X
+		const sentence = 'this will be the end of Wakanda';
+		console.log(sentence.substring(13));
+		console.log(sentence.substring(13, 20));
+		console.log(sentence.substring(0));
+		console.log(sentence.substring(0, -20)); // 음수 작동 X
+		console.log(sentence.substring(50)); // 길이 넘는 값 = 빈값 반환
+		console.log(sentence.substring(20, 13)) ;// 첫 인자가 크면 두 인자를 교환하여 리턴
+		// 13, 20 값과 같음.
+	</script>
+</body>
+</html>

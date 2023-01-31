@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script type="module">
+		import {value} from './value.js';
+		console.log(value); // 처음에 값 출력
+		setTimeout(() => console.log(value), 2000); // 이후 2초 뒤 값 출력 했는데
+		// 그 사이 모듈에서 값 변경 일어남. 그 변경이 반영됨.
+	</script>
+</body>
+</html>

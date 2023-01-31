@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function createCounterClosure(){
+			let count = 0;
+			return{
+				increse: function(){
+					count++;
+
+				},
+				getCounter: function(){
+					return count;
+				}
+			};
+		}
+		const counter1 = createCounterClosure();
+		const counter2 = createCounterClosure();
+		 counter1.increse();
+		 counter1.increse();
+		 console.log('counter1의 값 : ' + counter1.getCounter());
+		 counter2.increse();
+		console.log('counter2의 값 : ' + counter2.getCounter());
+
+		
+		/*
+		함수가 정의될 때 렉시컬 환경을 기억하는 함수/
+		외부 변수를 기억하고 외부 변수에 접근할 수 있는 함수
+		자바스크립트에서는 모든 함수가 자연스럽게 클로저가 됨.
+		*/
+
+	</script>
+	
+</body>
+</html>
