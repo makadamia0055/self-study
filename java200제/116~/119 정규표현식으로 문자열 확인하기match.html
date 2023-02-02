@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>정규표현식으로 문자열 확인하기</title>
+</head>
+<body>
+	<script>
+		/*
+		String 객체의 match apthem : 정규 표현식에 맞는 부분을 검색해서 추가정보와 함께 배열로 반환.
+		단, 정규표현식에 g플래그가 없을 때만 추가 정보 반환
+		추가정보는 
+		-인자로 대입한 값과 일치하는 값.
+		index 속성 : 대응된 부분의 첫번 째로 해당하는 인덱스
+		input 속성 : 원본 문자열
+
+
+		*/
+		const str = 'To lose your path is the way to find that path';
+
+		const senstiveCaseRegex = /to/;
+		const ignoreAllCaseRegex = /to/gi;
+		const findRangeRegex = /([a-f])\w+/i;
+		const findAllRangeRegex = /([a-f])\w+/gi;
+
+		console.log(str.match(senstiveCaseRegex));
+		console.log(str.match(ignoreAllCaseRegex));
+		console.log(str.match(findRangeRegex));
+		console.log(str.match(findAllRangeRegex));
+
+
+	</script>
+</body>
+</html>

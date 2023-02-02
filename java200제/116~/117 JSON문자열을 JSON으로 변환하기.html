@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JSON 문자열 변환</title>
+</head>
+<body>
+	<script>
+		/*
+		JSON.parse(값, 리플레이서)
+		값 : stringify로 변환할 대상값
+		리플레이서 : JSON으로 변환하기 전에 값을 변경하는 인자, 생략 가능
+		*/
+		const jsonStr = '{"drame" : "pet", "esason" : 2017, "casting" : '
+				+ '["koyuki", "matsumoto jun"], "character" : ["sumire" , "momo"]}';
+
+				console.log(JSON.parse(jsonStr));
+				console.log(JSON.parse(jsonStr, (key, val) => {
+					if (key ==='season') val = 2003;
+					return val;
+				}));
+
+				console.log(JSON.parse('13.1'));
+				console.log(typeof JSON.parse('13.1'));
+				console.log(JSON.parse('false'));
+				console.log(typeof JSON.parse('false'));
+
+				console.log(JSON.parse('"Kiss Carnival"'));
+				console.log(JSON.parse('[2003, 2017]'));
+	</script>
+</body>
+</html>

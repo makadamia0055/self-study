@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		RegEx 객체의 메소드 test(문자열)
+		대입된 문자열이 정규 표현식에 맞으면 true/false 값 반환.
+		
+		*/
+		const numRegExp = /[0-9]+/;
+		const phoneRegExp = /\d{3}-\d{3,4}-\d{4}$/;
+		const eamilRegExp = /^([-_.]?[0-9a-zA-Z]{6,13})+\@([0-9a-z]+)\.([a-z]{2,3})$/i;
+
+		console.log(numRegExp.test(12345));
+		console.log(numRegExp.test('text'));
+		console.log(phoneRegExp.test('010-3003-0046'));
+		console.log(phoneRegExp.test('02-8844-1234'));
+		console.log(eamilRegExp.test('test123@javascript.org'));
+		console.log(eamilRegExp.test('text-javascript'));
+
+	</script>
+</body>
+</html>
