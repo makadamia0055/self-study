@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*
+	문자열 객체는 Iterable 객체이자 Array-like로 index값과 length값이 있다. 
+
+	for of 문은 순환할 때 반복가능한 객체가 반환하는 iterator의 next를 호출하고 그 next의 호출 결과로 반환된 done값이 true일때까지 순환을 반복한다.
+
+	*/
+	const str = "hello";
+
+	for(const item of str ){
+		console.log(item);
+
+	} // h e l l o
+	const iter = str[Symbol.iterator]();
+	console.log(iter.next()); //{value: , done : t/f}으로 된 객체 반환
+	console.log(iter.next());
+	console.log(iter.next());
+	console.log(iter.next());
+	console.log(iter.next());
+	console.log(iter.next());
+</script>
+</body>
+</html>

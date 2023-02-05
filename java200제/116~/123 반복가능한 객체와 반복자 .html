@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		https://ko.javascript.info/iterable
+		
+		the Iterable Protocol(반복 가능한 규약) : 반복 가능한 규약으 ㄴ객체 안의 값들을 반복 할 수 있도록 반복 동작을 정의 하는 것을 허용.
+		
+		*/
+		const items = ['j' , 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't', ];
+		const seq = { // 객체 밖에 Symbol.iterator 설계
+			[Symbol.iterator](){
+				let i = 0;
+				return{
+					next(){
+						const value = items[i];
+						i++;
+						const done = i> items.length; // done 는 false시 다음 개체 인도, true시 반복 마침
+						return {value, done};
+					}
+				}
+			}
+		};
+
+		for(let s of seq) console.log(s);
+		const [a, b, c, ...arr] = seq; // 비구조화 할당
+		console.log('a>>>', a);
+		console.log('b>>>', b);
+		console.log('c>>>', c);
+		console.log('arr>>>', arr);
+
+
+	</script>
+</body>
+</html>

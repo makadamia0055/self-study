@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		https://ko.javascript.info/iterable
+		*/
+		let range = {
+			from : 1, 
+			to : 5
+		};
+		// 아래와 같이 for of가 동작할 수 있도록 하는게 목표
+		// for(let num of range) ... num = 1, 2, 3, 4, 5
+
+		//객체에 Symbol.iterator(특수 내장 심볼)이라는 메서드를 추가해야 for of 가 동작
+		/*
+		iterable = > 반복 가능한. 즉 내부에 Symbol.iterator 가 구현된 객체를 iterable, 반복가능하다고 말한다.
+		유사배열(array-like) 인덱스와 length 프로퍼티가 있어서 배열처럼 보이는 객체
+
+		1. for of 가 시작되면 for of는 Symbol.iterator를 호출함. 없으면 에러. Symbol.iterator는 반드시 next메서드가 있는 iterator를 반환해야함. 
+		2. 이후 for of는 반환된 객체(이터레이터)만을 대상으로 동작함
+		3. for of에 다음 값이 필요하면, for of는 이터레이터의 next() 메서드를 호출함
+		4. next()의 반환값은 {done: true/false, value: any}와 같은 형태로 이루어져 있음. done=true는 반복이 종료되었음을 의미. done=false 일때는 value에 값을 저장
+		
+		*/
+
+		range[Symbol.iterator] = function(){
+			// Symbol.iterator은 이터레이터 객체를 반환함. 이후 그 이터레이터를 대상으로 for of가 동작함.
+			return{
+				current : this.from,
+				last: this.to,
+
+				// for of 반복문에 의해 반복마다 next()가 호출됨
+				next(){
+					// next()는 값을 객체 {done: , value} 형태로 반환해야함.
+					if(this.current <=this.last){
+						return { done:false, value: this.current++};
+					}else{
+						return{ done: true};
+					}
+				}
+
+			};
+		};
+
+		for( let num of range){
+			alert(num); 
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		 map는 ES6부터 표준으로 추가된 데이터 집합체(Collection)의 한 종류.
+		 Key와 Value를 한 쌍으로 저장하고, 중복된 키는 허용하지 않음. 반복가능한 객체로 Iterator를 통해 객체 내부를 순환할 수 있음.
+		 Object(객체)와 다른점 
+		 Map객체의 키는 다양한 자료형으로 정의 가능 <=> Object는 문자열, Symbol 자료형만 가능
+		 Map는 기본적으로 Iterator이 정의되어 있음. <=> Object는 없음.
+		set(key, value) 값 삽입
+		get(key) key 값으로 value 리턴
+		has(key1) key가 key1인 요소가 객체 내부에 존재하는지 확인. true/false 리턴
+		delete(key) key로 값 삭제
+		*/ 
+		const map = new map();
+
+		map.set('one', 1);
+		map.set('two', 2);
+
+		console.log(map.get('one'));
+		console.log(map.has('one'));
+		map.delete('one');
+
+		console.log(map.has('one'));
+		console.log(map.has('two'));
+	</script>
+</body>
+</html>
