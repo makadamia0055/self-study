@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const map = new Map();
+
+		map.set('one', 1);
+		map.set('two', 2);
+		map.set('three', 3);
+
+		const keys = map.keys(); // keys 복수형으로
+		const values = map.values(); // values로 
+		const entries = map.entries(); // entries
+
+		console.log(keys.next().value);
+		console.log(values.next().value);
+		console.log(entries.next().value);
+
+		console.log(keys);
+		console.log(values);
+		console.log(entries);
+
+
+	</script>
+</body>
+</html>

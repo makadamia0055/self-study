@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		set는 ES6부터 표준으로 추가된 Collection 객체
+		값으로만 이루어져있고 중복이 허용되지 않음. 
+		*/ 
+		const s = new Set();
+
+		s.add('one');
+		s.add('two');
+		s.add('three');
+
+		console.log(s.has('one'));
+		s.delete('one');
+		console.log(s.has('one'));
+		console.log(s.has('two'));
+	</script>
+</body>
+</html>

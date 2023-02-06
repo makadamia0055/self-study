@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const s = new Set();
+
+		s.add('one');
+		s.add('two');
+		s.add('three');
+
+		const keys = s.keys();
+		const values = s.values();
+		const entries = s.entries();
+
+		console.log(keys.next().value); // key값 대신 value가 리턴
+		console.log(values.next().value); 
+		console.log(entries.next().value); // value값밖에 없지만 value : value 식으로 리턴됨
+
+		console.log(keys) // setIterator가 리턴
+		console.log(values)
+		console.log(entries)
+	</script>
+</body>
+</html>
